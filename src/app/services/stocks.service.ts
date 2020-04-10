@@ -33,8 +33,9 @@ export class StocksService {
   }
 
   load(symbols){
-    if(symbols){
+    if(symbols){          
       return this.http.get<Array<StockInterface>>(`${service}/stocks/snapshot?symbols=${symbols.join()}`)
+      //<Array<StockInterface>> --> is known as type variable that tells the get() method what type of object it should expect, and in thus case it'll expect to get an array of objects that conform to the StockInterface
     }
   }
 }
