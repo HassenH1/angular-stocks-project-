@@ -13,7 +13,6 @@ export class AppComponent {
   constructor(service: StocksService){
     service.load(['AAPL']).subscribe((stocks) => {
       this.stocks = stocks
-      // console.log(this.stocks)
     })
   }
 }
